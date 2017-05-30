@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.internalPort }}
+        env:
+        - name: BUCKET
+          value: {{ .Values.bucket }}
+        - name: PATH
+          value: {{ .Values.path }}
+        - name: AWS_SECRET_ACCESS_KEY
+          value: {{ .Values.AWS_SECRET_ACCESS_KEY }}
+        - name: AWS_ACCESS_KEY_ID
+          value: {{ .Values.AWS_ACCESS_KEY_ID }}
+        livenessProbe:
+          httpGet:
+            path: /
+            port: {{ .Values.service.internalPort }}
+        readinessProbe:
+          httpGet:
+            path: /
+            port: {{ .Values.service.internalPort }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - mountPath: /configs
+          name: configs-volume
+      volumes:
+      - name: configs-volume
+        emptyDir: {}
