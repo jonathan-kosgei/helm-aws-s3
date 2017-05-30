@@ -1,4 +1,4 @@
-# Helm Chart Example for AWS S3 reader
+# Helm Chart for AWS S3 reader
 
 ## Getting Started
 
