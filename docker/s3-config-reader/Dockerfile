@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 RUN apt-get update &&\
-    apt-get install awscli \
+    apt-get install -y awscli \
     supervisor \
     cron
 
