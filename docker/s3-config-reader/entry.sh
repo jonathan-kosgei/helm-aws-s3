@@ -2,7 +2,7 @@
 
 # Check if Env variables are set. Exit the container and print an error message if they're not.
 
-if [ -z "$CONFIG_PATH" ]; then
+if [ -z "$SYNC_PATH" ]; then
     echo "Environment variable PATH is not set!!!"
     exit 1
 fi
