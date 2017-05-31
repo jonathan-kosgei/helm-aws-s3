@@ -29,12 +29,12 @@ spec:
         - name: AWS_SECRET_ACCESS_KEY
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.KUBERNETES_SECRET_NAME }}
+              name: "{{ .Values.OPSC_ENV}}-{{ .Values.KUBERNETES_SECRET_NAME }}"
               key: AWS_SECRET_ACCESS_KEY
         - name: AWS_ACCESS_KEY_ID
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.KUBERNETES_SECRET_NAME }}
+              name: "{{ .Values.OPSC_ENV}}-{{ .Values.KUBERNETES_SECRET_NAME }}"
               key: AWS_ACCESS_KEY_ID
         livenessProbe:
           httpGet:

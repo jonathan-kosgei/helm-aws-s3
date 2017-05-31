@@ -1,6 +1,16 @@
 # Default values for aws-s3-reader.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+
+# Specific values you can edit for aws-s3-reader
+# 1. service.clusterIP - Set this to whatever value you want so long as it is within the 
+# service-cluster-ip-range CIDR range that is specified by flag to the API server. If the IP address value is invalid, 
+# the apiserver returns a 422 HTTP status code to indicate that the value is invalid.
+# 2. BUCKET: s3://mybucket
+# 3. SYNC_PATH: /config
+# 4. KUBERNETES_SECRET_NAME: aws-secret
+# 5. OPSC_ENV: dev
+
 replicaCount: 1
 image:
   repository: nginx
@@ -9,7 +19,7 @@ image:
 service:
   name: nginx
   type: ClusterIP
-  clusterIP: 10.0.171.239
+  clusterIP: 10.96.0.4
   externalPort: 80
   internalPort: 80
 ingress:
@@ -35,4 +45,5 @@ resources:
 
 BUCKET: s3://mybucket
 SYNC_PATH: /config
-KUBERNETES_SECRET_NAME: dev-aws-secret
+KUBERNETES_SECRET_NAME: aws-secret
+OPSC_ENV: dev

@@ -11,6 +11,6 @@ spec:
     targetPort: {{ .Values.service.internalPort }}
     protocol: TCP
     name: {{ .Values.service.name }}
-    clusterIP: {{ .Values.service.ip }}
+    clusterIP: {{ .Values.service.clusterIP }}
   selector:
     app: {{ template "fullname" . }}
