@@ -27,7 +27,7 @@ chmod 600 /etc/crontab
 crontab /var/crontab.txt
 
 # echo env vars
-echo "PATH": $PATH
+echo "SYNC_PATH": $SYNC_PATH
 echo "BUCKET": $BUCKET
 echo "AWS_SECRET_ACCESS_KEY": $AWS_SECRET_ACCESS_KEY
 echo "AWS_ACCESS_KEY_ID": $AWS_ACCESS_KEY_ID
