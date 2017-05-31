@@ -1,11 +1,8 @@
 #!/bin/bash
 
-mkdir -p /var/log/nginx
-ls /var/log
-
 # Check if Env variables are set. Exit the container and print an error message if they're not.
 
-if [ -z "$PATH" ]; then
+if [ -z "$CONFIG_PATH" ]; then
     echo "Environment variable PATH is not set!!!"
     exit 1
 fi
