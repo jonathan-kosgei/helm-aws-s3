@@ -5,9 +5,9 @@ RUN apt-get update &&\
     supervisor \
     cron
 
-ADD entry /entry.sh
+ADD entry.sh /entry.sh
 
-ADD supervisord /supervisord.conf
+ADD supervisord.conf /supervisord.conf
 
 ADD sync.sh /etc/cron.hourly
 
