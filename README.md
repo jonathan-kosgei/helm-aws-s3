@@ -23,3 +23,17 @@ Then to install this helm run
 ```
 helm install -f config.yaml helm/aws-s3-reader-0.1.0.tgz
 ```
+For different environments i.e. `dev`, `staging`, `qa`, `prod` create different named files with different configs eg.
+```
+$ cat dev-config.yaml
+BUCKET: s3://dev-bucket
+PATH: /config
+AWS_SECRET_ACCESS_KEY: Your AWS SECRET
+AWS_ACCESS_KEY_ID: Your AWS ACCESS KEY
+```
+
+```
+Then run
+helm install -f dev-config.yaml helm/aws-s3-reader-0.1.0.tgz
+```
+And so on for as many environments as you'd like
