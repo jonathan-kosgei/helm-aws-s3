@@ -3,7 +3,7 @@
 # Check if Env variables are set. Exit the container and print an error message if they're not.
 
 if [ -z "$SYNC_PATH" ]; then
-    echo "Environment variable PATH is not set!!!"
+    echo "Environment variable SYNC_PATH is not set!!!"
     exit 1
 fi
 if [ -z "$BUCKET" ]; then
