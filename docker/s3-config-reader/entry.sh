@@ -22,10 +22,6 @@ fi
 # Create nginx supervisord log folder
 mkdir -p /var/log/nginx
 
-# Start AWS S3 Sync Crontab
-chmod 600 /etc/crontab
-crontab /var/crontab.txt
-
 # echo env vars
 echo "SYNC_PATH": $SYNC_PATH
 echo "BUCKET": $BUCKET
