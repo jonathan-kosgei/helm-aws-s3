@@ -2,7 +2,7 @@ FROM debian:jessie
 
 RUN apt-get update &&\
     apt-get install awscli \
-    supervisord \
+    supervisor \
     cron
 
 ADD entry /entry.sh
