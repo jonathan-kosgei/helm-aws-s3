@@ -25,11 +25,11 @@ mkdir -p /var/log/nginx
 chmod 600 /etc/crontab
 crontab /var/crontab.txt
 
-# Start supervisord passing in the conf file
-supervisord -c /supervisord.conf
-
 # echo env vars
 echo "PATH": $PATH
 echo "BUCKET": $BUCKET
 echo "AWS_SECRET_ACCESS_KEY": $AWS_SECRET_ACCESS_KEY
 echo "AWS_ACCESS_KEY_ID": $AWS_ACCESS_KEY_ID
+
+# Start supervisord passing in the conf file
+supervisord -c /supervisord.conf
