@@ -28,5 +28,6 @@ echo "BUCKET": $BUCKET
 echo "AWS_SECRET_ACCESS_KEY": $AWS_SECRET_ACCESS_KEY
 echo "AWS_ACCESS_KEY_ID": $AWS_ACCESS_KEY_ID
 
+
 # Start supervisord passing in the conf file
 supervisord -c /supervisord.conf

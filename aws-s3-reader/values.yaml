@@ -34,6 +34,5 @@ resources:
     memory: 128Mi
 
 BUCKET: s3://mybucket
-PATH: /config
-AWS_SECRET_ACCESS_KEY: Default
-AWS_ACCESS_KEY_ID: Default
+SYNC_PATH: /config
+KUBERNETES_SECRET_NAME: dev-aws-secret
