@@ -28,6 +28,8 @@ echo "BUCKET": $BUCKET
 echo "AWS_SECRET_ACCESS_KEY": $AWS_SECRET_ACCESS_KEY
 echo "AWS_ACCESS_KEY_ID": $AWS_ACCESS_KEY_ID
 
+# Sync folder with s3 bucket
+aws s3 sync $BUCKET $PATH
 
 # Start supervisord passing in the conf file
 supervisord -c /supervisord.conf
