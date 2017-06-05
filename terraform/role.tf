@@ -1,3 +1,5 @@
+# Define an aws role
+
 resource "aws_iam_role" "s3-reader" {
   name = "s3-reader-role"
 

@@ -1,3 +1,4 @@
+# Create 4 buckets named dev, qa, staging and prod
 
 resource "aws_s3_bucket" "dev" {
   bucket   = "dev"

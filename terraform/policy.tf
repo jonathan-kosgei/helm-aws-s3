@@ -1,3 +1,6 @@
+# Define the aws iam policy for the buckets
+# The below policy gives all permissions on s3 resources to the role
+
 resource "aws_iam_policy" "s3-reader" {
   name = "s3-reader-policy"
 
